@@ -38,8 +38,13 @@ class ViewController: UIViewController {
             savedNum = labelInt
         }
         
+        let formatter: NumberFormatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        let num = NSNumber(value: labelInt)
+        
+        
         //setting the text inside the label textfield
-        label.text = "\(labelInt)"
+        label.text = formatter.string(from: num)
     }
     
     func changeModes(newMode: modes) {
